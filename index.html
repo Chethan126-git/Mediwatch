@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elderly Life - All Time Guider</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<!-- WELCOME -->
+<div class="container active" id="welcomeScreen">
+    <h1>Elderly Life - All Time Guider</h1>
+    <p>Your trusted companion for a safer, healthier, and independent life.</p>
+    <button onclick="showScreen('categoryScreen')">Next</button>
+</div>
+
+<!-- CATEGORY -->
+<div class="container categories" id="categoryScreen">
+    <h1>Choose a Service</h1>
+
+    <div class="card" onclick="showScreen('reminderScreen')">
+        <h2>⏰ Reminder System</h2>
+        <p>Manage medications and routines.</p>
+    </div>
+
+    <div class="card">
+        <h2>🚨 Emergency System</h2>
+        <p>Quick alerts for emergencies.</p>
+    </div>
+
+    <div class="card">
+        <h2>😊 Mood & Activity</h2>
+        <p>Stay mentally active.</p>
+    </div>
+</div>
+
+<!-- REMINDER -->
+<div class="container" id="reminderScreen">
+    <div class="reminder-box">
+        <h2>Medicine Reminder</h2>
+
+        <input type="text" id="medicine" placeholder="Medicine Name">
+        <input type="time" id="time">
+
+        <button onclick="setReminder()">Set Reminder</button>
+
+        <div class="status" id="status"></div>
+
+        <button id="okBtn" onclick="confirmTaken()" style="display:none;">
+            I'm OK
+        </button>
+
+        <div id="riskMsg" class="risk"></div>
+
+        <br>
+        <button onclick="showScreen('categoryScreen')">⬅ Back</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
